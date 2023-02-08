@@ -7,8 +7,9 @@ module.exports = (sequelize) => {
     
     id:{
       type: DataTypes.UUID,
-      default: DataTypes.UUIDV4,
-      primaryKey:true
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+      primaryKey: true
     },
     
     name: {
@@ -16,10 +17,10 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
 
-    description:{
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    // description:{
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
 
     realesed:{
       type: DataTypes.STRING,
@@ -32,7 +33,11 @@ module.exports = (sequelize) => {
 
     platforms:{
       type: DataTypes.STRING
+    },
+    createdInDB: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
     }
-
   });
 };
