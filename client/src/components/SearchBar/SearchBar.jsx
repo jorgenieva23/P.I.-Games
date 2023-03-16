@@ -29,8 +29,8 @@ export default function SearchBar() {
           placeholder="what are we looking for?"
           onChange={(e) => setName(e.target.value)}
         />
-        <button type="submit" onClick={(e) => handleSubmit(e)}>
-          <img src={lupa} alt="boton"/>
+        <button className={style.button}type="submit" onClick={(e) => handleSubmit(e)}>
+          <img className={style.img} src={lupa} alt="boton"/>
         </button>
       </form>
     </div>

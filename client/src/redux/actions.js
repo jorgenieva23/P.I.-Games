@@ -64,7 +64,6 @@ export function getPlatforms() {
     try {
       const apiData = await axios.get('http://localhost:3001/platforms')
       const plat = apiData.data
-      console.log("holaa",plat);
       dispatch({ 
         type: GET_PLATFORMS, payload: plat
        })

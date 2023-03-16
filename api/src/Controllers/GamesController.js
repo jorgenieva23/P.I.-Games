@@ -73,7 +73,7 @@ const getAllGames = async () => {
     });
   }
   const bddGames = cleanArray2(databaseGames);
-  console.log(bddGames);
+
 
   return [...bddGames, ...apiGamesClean];
 };
@@ -93,7 +93,6 @@ const searchGameByName = async (name) => {
   });
 
   const bddGames = cleanArray2(databaseGames);
-    console.log("hola",bddGames);
 
 
   const apiGamesClean = [];

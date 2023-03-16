@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../../components/Card/Card";
+import Loader from "../../components/Loader/Loader";
 import SideBar from "../../components/SideBar/SideBar";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Paginado from "../../components/Paginate/Paginado";
@@ -43,6 +44,10 @@ const Home = () => {
     dispatch(getGames());
     dispatch(getGenres());
   }, [dispatch]);
+
+  if(!allGames.length) {
+    return ( <Loader/> )
+}
 
   function handlerClick(e) {
     e.preventDefault();

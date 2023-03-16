@@ -18,7 +18,6 @@ const getAllPlat = async () => {
     let apiClean = cleanArray(apiData)
     let aux = apiClean.map((e) => Object.values(e)).join(', ').split(', ');
     let aux2 = new Set (aux)
-    console.log(aux2);
     
     let apiGen = [...aux2]
 
