@@ -1,0 +1,129 @@
+.container{
+    padding-top: 1px;
+}
+.back{
+  background-image: url("../../Image/doom-2016-video-game2\ \(1\).jpg");
+  background-position: center center;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  height: 55rem; 
+  width: 100%; 
+  position: relative;
+}
+.mainContainer {
+    margin: 10px 15px;
+    width: 40%;
+    padding: 8px;
+    position: relative;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    color: #DC5F00;
+    border-radius: 12px;
+    position: relative;
+    background-color:#222222cb;
+    background-size: cover;
+    display: inline-block;
+    padding:5px;
+    box-sizing: border-box;
+    
+  }
+  
+  .mainTitle {
+    text-align: center;
+    margin: 10px;
+    font-size: 45px;
+  }
+  
+  .image {
+    border-radius: 15px;
+    object-fit: cover;
+    height: 300px;
+    border: 3px #CF0A0A solid;
+    box-shadow: 6px 7px 8px -6px rgba(255, 245, 245, 0.7);
+  }
+  
+   .detailsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #222222cb;
+    padding: 8px;
+    border-radius: 20px;
+    max-width: 100%;
+    min-height: 25%;
+    margin: 10px;
+  } 
+  
+  .temperament {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .life_span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 50%;
+  }
+  
+  .weights {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 50%;
+  }
+  
+  .heights {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 50%;
+  }
+  
+  .detailsSVG {
+    width: 100px;
+    background-color: #434242;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  
+  .button {
+    background-color: #FF4000;
+    margin-bottom: 15px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #CF0A0A;
+  }
+  
+  .imageSection {
+    padding: 5px;
+    margin: 15px;
+  }
+  
+  .infoSection {
+    padding: 5px;
+    margin: 15px;
+  }
+  
+  .xBone {
+    height: 25px;
+  }

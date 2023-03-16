@@ -21,7 +21,7 @@ const getAllGen = async () => {
     let aux2 = new Set (aux)
 
     let apiGen = [...aux2]
-    console.log(apiGen);
+
     apiGen.map(e => Genres.findOrCreate({
         where: {name: e}
     }))  

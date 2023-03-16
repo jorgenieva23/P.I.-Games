@@ -1,0 +1,171 @@
+.form_back_image{
+  background-image: url("../../Image/doom-game-hd.jpg");
+  background-position: center center;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  height: 50rem; 
+  width: 100%; 
+  position: relative;
+}
+.form_mainConteiner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:110vh;
+  font-family: Arial, sans-serif;
+}
+
+.form_container {
+  margin-top: 30px;
+  padding: 2rem;
+  background-color: hsla(0, 0%, 19%, 0.87);
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 #CF0A0A;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form_h1{
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #DC5F00;
+}
+
+.form_requeriment {
+  font-weight: bold;
+  color: #DC5F00;
+}
+
+.form_bCreate {
+  margin-bottom: 1rem;
+}
+
+.form_input[type="text"],
+.form_textarea,
+.form_input[type="date"],
+.form_input[type="number"]{
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+
+.form_select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  overflow: auto;
+}
+
+.form_input[type="text"]:focus,
+.form_textarea:focus,
+.form_input[type="date"]:focus,
+.form_input[type="number"]:focus,
+.form_select:focus {
+  outline: none;
+  border-color: #CF0A0A;
+  box-shadow: 0 0 5px 0 rgba(0, 119, 255, 0.5);
+}
+
+.form_p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #DC5F00;
+  margin-top: 0.5rem;
+}
+
+.form_button2 {
+ font-size: 17px;
+ margin-top: 20px;
+ padding: 1rem 0.7rem;
+ font-weight: 500;
+ background: #DC5F00;
+ color: white;
+ border: none;
+ /* position: relative; */
+ overflow: hidden;
+ border-radius: 0.6em;
+}
+
+.gradient {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 0;
+ top: 0;
+ border-radius: 0.6em;
+ margin-top: -0.25em;
+ background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+
+.label {
+ position: relative;
+ top: -1px;
+}
+
+.transition {
+ transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+ transition-duration: 500ms;
+ background-color: #CF0A0A;
+ border-radius: 9999px;
+ width: 0;
+ height: 0;
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+}
+
+.form_button2:hover .transition {
+ width: 14em;
+ height: 14em;
+}
+
+.form_button2:active {
+ transform: scale(0.97);
+}
+
+.form_div {
+  display: inline-block;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.form_button1 {
+  font-size: 17px;
+  margin-top: 20px;
+  padding: 0.2rem 0.7rem;
+  font-weight: 500;
+  background: #DC5F00;
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6em;
+ }
+
+/* form button {
+  display: inline-block;
+  margin: 4px 2px;
+  padding: 0.5rem;
+  background-color: #DC5F00;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: #CF0A0A;
+} */
+

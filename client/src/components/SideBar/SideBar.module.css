@@ -1,0 +1,25 @@
+.sidebar {
+  position: fixed;
+  width: 200px;
+  background-color: hsl(0, 0%, 0%);
+  height: 100%;
+  top: 3.5rem;
+  color: #FF4000;
+}
+
+.sidebar_ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar_li {
+  margin-bottom: 10px;
+}
+
+.sidebar_a {
+  display: block;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+}

@@ -14,8 +14,8 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    descripction: {
+     },
+    description: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -24,10 +24,14 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     rating:{
+      type: DataTypes.DECIMAL,
+      allowNull: false
+    },
+    image:{
       type: DataTypes.STRING,
     },
     platforms:{
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false
     },
     createdInDB: {
@@ -35,5 +39,7 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: true
     }
-  });
+  },
+  { timestamps: false }
+  );
 };

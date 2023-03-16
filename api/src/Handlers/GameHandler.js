@@ -11,6 +11,7 @@ const getGamesHandler = async (req, res) => {
       ? await searchGameByName(name)
       : await getAllGames();
 
+
     res.status(200).json(results);
   } catch (error) {
     res.status(404).send(error)
@@ -21,7 +22,6 @@ const getGamesHandler = async (req, res) => {
 
 const getGameHandler = async (req, res) => {
   try {
-    console.log("hola");
     const { id } = req.params;
     const allGames = await getAllGames();
     if (!id) {
@@ -36,69 +36,57 @@ const getGameHandler = async (req, res) => {
 }
 
 
-// const createGameHandler = async (req, res) => {
-//   let { id, name, genres, descripction, released, rating, platforms, createdInDB } = req.body
-//   try {
-//     if (!name || !platforms || !genres) {
-//       return res.status(400).send("Mandatory data missing");
-//     }
-//     let noRepeat = await Videogames.findOne({
-//       where: {
-//         name: name,
-//         released: released,
-//       },
-//     });
 
-//     if (noRepeat) {
-//       return res
-//         .status(400)
-//         .send(`There is already a ${name} videogame released in ${released}`);
-//     }
-//     let newGame = await createGame(id, name, genres, descripction, released, rating, platforms, createdInDB)
-    
-//     const genr = await Genres.findAll({
-//       where: { name: genres }
-//     })
-//     newGame.add.Genres(genr)
-//     res.status(201).json("Creado exitosamente")
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// }
-
-const createGameHandler = async (req, res)=> {
-    let {name, genres, descripction, released, rating, platforms, createdInDB} = req.body      
-        try {
-          if (!name || !platforms || !genres) {
-            return res.status(400).send("Mandatory data missing");
-          }
-
-          let noRepeat = await Videogames.findOne({
-            where: {
-              name: name,
-              released: released,
-            },
-          });
-      
-          if (noRepeat) {
-            return res
-              .status(400)
-              .send(`There is already a ${name} videogame released in ${released}`);
-          }
-
-            let newGame = await createGame (
-                name, genres, descripction, released, rating, platforms, createdInDB)
-
-                const gen = await Genres.findAll({
-                    where:{name:genres}
-            })
-            newGame.addGenres(gen)
-            res.status(201).json("Creado exitosamente")       
-        }
-            catch (error) {         
-            res.status(400).json({ error: error.message });
-        }
+const createGameHandler = async (req, res) => {
+  let { name, genres, description, released, rating, image, platforms, createdInDB } = req.body
+  try {
+    if (!name || !platforms || !genres) {
+      return res.status(400).send("Mandatory data missing");
     }
 
+    let noRepeat = await Videogames.findOne({
+      where: {
+        name: name,
+        released: released,
+      },
+    });
 
-module.exports = { getGamesHandler, getGameHandler, createGameHandler }
+    if (noRepeat) {
+      return res
+        .status(400)
+        .send(`There is already a ${name} videogame released in ${released}`);
+    }
+
+    let newGame = await createGame(
+      name, genres, description, released, rating, image, platforms, createdInDB)
+
+    const gen = await Genres.findAll({
+      where: { name: genres }
+    })
+    newGame.addGenres(gen)
+    res.status(201).send(newGame)
+  }
+  catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+}
+
+const deleteGame = async (req, res) => {
+  try {
+    let { id } = req.params
+    let forDelete = await Videogames.findByPk(id)
+    if (id && forDelete) {
+      await Videogames.destroy({
+        where: {
+          id: id
+        }
+      })
+    }
+    res.status(201).json("Borrado exitosamente")
+  } catch (error) {
+    res.status(400).json({ error: "No se recibieron los parámetros necesarios para borrar el Post" })
+  }
+}
+
+
+module.exports = { getGamesHandler, getGameHandler, createGameHandler, deleteGame }
