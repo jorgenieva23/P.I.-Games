@@ -6,7 +6,7 @@ require('dotenv').config()
 const routerGames = require("./routerGames")
 const routerGenres = require("./routerGenres")
 const routerPlatforms = require("./routerPlatforms")
-// const routerUsers = require("./routerUsers")
+const routerUsers = require("./routerUsers")
 
 const router = Router();
 
@@ -14,7 +14,7 @@ const router = Router();
 router.use('/videogames', routerGames);
 router.use('/genres', routerGenres);
 router.use('/platforms', routerPlatforms);
-// router.use('/users',  routerUsers);
+router.use('/user',  routerUsers);
 
 
 module.exports = router;

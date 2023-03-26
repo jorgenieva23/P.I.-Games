@@ -1,11 +1,11 @@
-// const express = require('express');
-// const routerUsers = express.Router()
+const express = require('express');
+const routerUsers = express.Router()
 
-// const {postUsers, getUsers} = require('../Handlers/UsersControllers');
+const {postUsers, getUsers} = require('../Handlers/UsersHandlers');
 
-// routerPlatforms.get('/', getPlatHandlers)
+routerUsers.get('/', getUsers)
 
-//  routerPlatforms.post('/', getPlatHandlers)
+routerUsers.post('/', postUsers)
 
 
-// module.exports = routerUsers
+module.exports = routerUsers

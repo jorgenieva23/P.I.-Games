@@ -37,6 +37,14 @@ export default function Detail(props) {
           <div className={style.description}>
             <div className={style.infoSection}>
               <div>
+                <h3>pais: {game.pais}</h3>
+              </div>
+            </div>
+          </div>
+
+          <div className={style.description}>
+            <div className={style.infoSection}>
+              <div>
                 <h3>description: {game.description}</h3>
                 {/* <p>{game.description}</p> */}
               </div>
@@ -70,7 +78,7 @@ export default function Detail(props) {
           </div>
         </div>
         <Link
-            to={`/home/${props.id}`}
+            to={`/home${props.id}`}
             style={{ color: "inherit", textDecoration: "inherit" }}
           >
             <button className={style.button} type="submit">

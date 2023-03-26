@@ -103,6 +103,7 @@ const Home = () => {
               <Card
                 key={c.id}
                 id={c.id}
+                pais={c.pais}
                 name={c.name}
                 released={c.released}
                 rating={c.rating}

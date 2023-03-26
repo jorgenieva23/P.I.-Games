@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Videogames, Genres } = require("../db.js");
+const { Videogames, Genres, Users } = require("../db.js");
 require("dotenv").config();
 const { API_KEY } = process.env;
 
@@ -15,7 +15,9 @@ const cleanArray2 = (arr) =>
       genres: e.genres.map((e) => e.name).join(", "),
       platforms: e.platforms.join(", "),
       image: e.image,
+      pais:e.pais,
       createdInDB: false,
+
     };
   });
 
@@ -40,6 +42,7 @@ const createGame = async (
     createdInDB,
   });
 };
+
 
 const getAllGames = async () => {
   const databaseGames = await Videogames.findAll({
@@ -123,4 +126,4 @@ const searchGameByName = async (name) => {
   return [...filteredApi, ...bddGames];
 };
 
-module.exports = { searchGameByName, getAllGames, createGame };
+module.exports = { searchGameByName, getAllGames, createGame};

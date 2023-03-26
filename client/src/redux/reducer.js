@@ -18,6 +18,7 @@ const initialState = {
     allGames: [],
     platforms: [],
     details: [],
+    users:[]
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -41,17 +42,17 @@ const rootReducer = (state = initialState, action) => {
             }
 
         case FILTER_BY_GENRES:
-        const gamess = state.allGames;
-        const genresFiltered =
-        action.payload === "temp"
-          ? gamess
-          : gamess.filter((el) =>el.genres.toLowerCase().includes(action.payload.toLowerCase())
-            );
+            const gamess = state.allGames;
+            const genresFiltered =
+                action.payload === "temp"
+                    ? gamess
+                    : gamess.filter((el) => el.genres.toLowerCase().includes(action.payload.toLowerCase())
+                    );
             console.log(genresFiltered);
-      return {
-        ...state,
-        games: genresFiltered,
-      }
+            return {
+                ...state,
+                games: genresFiltered,
+            }
 
 
         case FILTER_BY_ORIGIN:
@@ -125,6 +126,17 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 videogames: action.payload
+            };
+        case "POST_USER":
+            return {
+                ...state,
+                users: action.payload
+            };
+
+        case "GET_USER":
+            return {
+                ...state,
+                users: action.payload
             };
 
         default:
